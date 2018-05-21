@@ -48,18 +48,7 @@ while True:
                             client.sendChatChecked(receiver, msg_id)
                             contact = client.getContact(sender)
                             if text.lower() == 'me':
-                                client.sendMessage(receiver, None, contentMetadata={'mid': sender}, contentType=13)
-							elif 'sticker:' in msg.text.lower():
-                                try:
-                                    query = msg.text.replace("sticker:", "")
-                                    query = int(query)
-                                    if type(query) == int:
-                                        client.sendImageWithURL(receiver, 'https://stickershop.line-scdn.net/stickershop/v1/product/'+str(query)+'/ANDROID/main.png')
-                                        client.sendText(receiver, 'https://line.me/S/sticker/'+str(query))
-                                    else:
-                                        client.sendText(receiver, 'gunakan key sticker angka bukan huruf')
-                                except Exception as e:
-                                    client.sendText(receiver, str(e))    
+                                client.sendMessage(receiver, None, contentMetadata={'mid': sender}, contentType=13)    
                             elif text.lower() == 'speed':
                                 start = time.time()
                                 client.sendText(receiver, "Result")
