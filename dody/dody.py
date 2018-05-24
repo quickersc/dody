@@ -123,7 +123,7 @@ while True:
                                         nm5 += [nama[m]]
                                     client.mention(msg.to, nm5)             
                                 client.sendText(receiver, "// Creator By Dody Fadhlurrahman // Members :"+str(jml))
-                            elif text.lower() == 'sideron':
+                            elif text.lower() == 'teston':
                                 try:
                                     del cctv['point'][msg.to]
                                     del cctv['sidermem'][msg.to]
@@ -133,7 +133,7 @@ while True:
                                 cctv['point'][msg.to] = msg.id
                                 cctv['sidermem'][msg.to] = ""
                                 cctv['cyduk'][msg.to]=True
-                            elif text.lower() == 'sideroff':
+                            elif text.lower() == 'result':
                                 if msg.to in cctv['point']:
                                     cctv['cyduk'][msg.to]=False
                                     client.sendText(msg.to, cctv['sidermem'][msg.to])
@@ -151,7 +151,7 @@ while True:
                                 pass
                             else:
                                 cctv['sidermem'][op.param1] += "\n~ " + Name
-                                pref=['Eh Ada ']
+                                pref=['Hallo']
                                 client.sendText(op.param1, str(random.choice(pref))+' '+Name)
                         else:
                             pass
